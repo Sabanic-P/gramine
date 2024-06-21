@@ -1,5 +1,6 @@
+PREFIX ?= $(shell pwd)
 build:
-	meson setup build/ --buildtype=release -Ddirect=enabled -Dlibc=musl
+	meson setup build/ --buildtype=release -Ddirect=enabled -Dlibc=musl --prefix=${PREFIX}/
 	ninja -C build/
 
 install:
